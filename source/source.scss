@@ -1,0 +1,12 @@
+// Import bootstrap and fontawesome
+@import "variables";
+@import "bootstrap";
+@import "bootstrap/theme";
+@media (min-width: 1200px){
+.container {
+    width: 1000px;
+}
+}
+
+
+
