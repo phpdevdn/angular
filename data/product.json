@@ -1,10 +1,10 @@
 [
 	{
 		"id" : 1 ,
-		"title" : "product 01",
+		"title" : "new product 01",
 		"description" : "text text text text text text text text text text text text text text text text text text text text text text text ",
 		"img" : "images/prod-01.jpg",
-		"time" : "29-08-2015",
+		"time" : "08-29-2015",
 		"status" : 1 ,
 		"cate_id" : ""
 	},
@@ -13,7 +13,7 @@
 		"title" : "product 02",
 		"description" : "text text text text text text text text text text text text text text text text text text text text text text text ",
 		"img" : "images/prod-02.jpg",
-		"time" : "29-07-2015",
+		"time" : "07-29-2015",
 		"status" : 1 ,
 		"cate_id" : ""
 	},
@@ -22,7 +22,7 @@
 		"title" : "product 03",
 		"description" : "text text text text text text text text text text text text text text text text text text text text text text text ",
 		"img" : "images/prod-03.jpg",
-		"time" : "29-06-2015",
+		"time" : "06-29-2015",
 		"status" : 1 ,
 		"cate_id" : ""
 	},
@@ -31,7 +31,7 @@
 		"title" : "product 04",
 		"description" : "text text text text text text text text text text text text text text text text text text text text text text text ",
 		"img" : "images/prod-04.jpg",
-		"time" : "09-08-2015",
+		"time" : "08-09-2015",
 		"status" : 1 ,
 		"cate_id" : ""
 	},
@@ -40,7 +40,7 @@
 		"title" : "product 05",
 		"description" : "text text text text text text text text text text text text text text text text text text text text text text text ",
 		"img" : "images/prod-05.jpg",
-		"time" : "29-08-2014",
+		"time" : "08-29-2014",
 		"status" : 1 ,
 		"cate_id" : ""
 	},
@@ -49,7 +49,7 @@
 		"title" : "product 06",
 		"description" : "text text text text text text text text text text text text text text text text text text text text text text text ",
 		"img" : "images/prod-06.jpg",
-		"time" : "10-08-2015",
+		"time" : "05-10-2015",
 		"status" : 1 ,
 		"cate_id" : ""
 	},
@@ -58,7 +58,7 @@
 		"title" : "product 07",
 		"description" : "text text text text text text text text text text text text text text text text text text text text text text text ",
 		"img" : "images/prod-07.jpg",
-		"time" : "15-05-2014",
+		"time" : "01-15-2014",
 		"status" : 1 ,
 		"cate_id" : ""
 	},
@@ -67,7 +67,7 @@
 		"title" : "product 08",
 		"description" : "text text text text text text text text text text text text text text text text text text text text text text text ",
 		"img" : "images/prod-08.jpg",
-		"time" : "01-07-2015",
+		"time" : "04-01-2015",
 		"status" : 1 ,
 		"cate_id" : ""
 	},
@@ -76,7 +76,7 @@
 		"title" : "product 09",
 		"description" : "text text text text text text text text text text text text text text text text text text text text text text text ",
 		"img" : "images/prod-09.jpg",
-		"time" : "15-12-2014",
+		"time" : "12-15-2014",
 		"status" : 1 ,
 		"cate_id" : ""
 	},
@@ -85,7 +85,7 @@
 		"title" : "product 10",
 		"description" : "text text text text text text text text text text text text text text text text text text text text text text text ",
 		"img" : "images/prod-10.jpg",
-		"time" : "15-01-2014",
+		"time" : "01-15-2014",
 		"status" : 1 ,
 		"cate_id" : ""
 	},
@@ -94,7 +94,7 @@
 		"title" : "product 11",
 		"description" : "text text text text text text text text text text text text text text text text text text text text text text text ",
 		"img" : "images/prod-11.jpg",
-		"time" : "23-05-2014",
+		"time" : "05-23-2014",
 		"status" : 1 ,
 		"cate_id" : ""
 	},
@@ -103,7 +103,7 @@
 		"title" : "product 12",
 		"description" : "text text text text text text text text text text text text text text text text text text text text text text text ",
 		"img" : "images/prod-12.jpg",
-		"time" : "15-03-2015",
+		"time" : "03-15-2015",
 		"status" : 1 ,
 		"cate_id" : ""
 	}

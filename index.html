@@ -24,11 +24,39 @@
 	</header><!-- /header -->
 	<main id="main">
 	<div class="right-block" ng-controller="product">
-		<ul class="list-prod">
-			<li ng-repeat="prod in prods">
+		<nav class="navbar">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<p class="navbar-brand">Sort by : </p>
+				</div>
+				<div class="navbar-form">
+				<select name="" id="" ng-model="order_prod" class="form-control">
+					<option value="id">id</option>
+					<option value="title">title</option>
+					<option value="time">date</option>
+				</select>
+				<span>&nbsp;order by : &nbsp;</span>
+				<select name="" id="" class="form-control" ng-model="asc_sel" ng-change="order_sort(asc_sel)" ng-init=" asc_sel= '0' ">
+					<option value="1" >Asc</option>
+					<option value="0" >Desc</option>
+				</select>
+				<div class="navbar-right">
+					<label>search for : </label>
+					<input name="s_name" class="form-control" type="text" ng-model="s_name">
+					<select name="s_type" id="" class="form-control" ng-model="s_type">
+						<option value="id">id</option>
+						<option value="title">title</option>
+					</select>					
+				</div>
+			</div>
+			</div>
+		</nav>
+		<p>{{ s_search }}</p>
+   		<ul class="list-prod">
+			<li ng-repeat="prod in prods | filter : s_search | orderBy: order_prod : asc ">
 				<img ng-Src="{{prod.img}}" alt="">
 				<p class="tit-prod">{{ prod.title}}</p>
-				<p class="time-prod">{{prod.time}}</p>
+				<p class="time-prod">{{prod.time | date:"dd-MM-yyyy"}}</p>
 			</li>
 		</ul>
 	</div>
