@@ -16,7 +16,15 @@ mainApp.controller('product',['$scope','$http','$filter',function($scope,$http,$
 		$scope.prods = data ;
 		$scope.s_name = 4 ;
 		$scope.s_type = 'title';
-		$scope.s_search = { 'id' : $scope.s_name };
+		$scope.s_search = function (value, index,array){
+			var s_name= $scope.s_name;
+			var s_type=$scope.s_type;
+			if(value.title.length > 0){
+				return true;
+			}else{
+				return false;
+			}
+		};
 		$scope.order_sort=function(data){
 			$scope.asc = (data==1)? false : true ;
 		}
