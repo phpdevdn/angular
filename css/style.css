@@ -34,10 +34,11 @@ a:hover {
   .list-prod li {
     display: inline-block;
     width: 25%;
-    vertical-align: center;
+    vertical-align: top;
     font-size: 13px;
     text-align: center;
-    margin: 0 0 20px; }
+    margin: 0 0 20px;
+    position: relative; }
     .list-prod li img {
       max-width: 98%; }
     .list-prod li .tit-prod {
@@ -47,5 +48,18 @@ a:hover {
       border-top: 1px dashed #ddd;
       padding: 4px;
       margin: 0 5px; }
+
+.listProd {
+  position: relative;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out; }
+
+.listProd.ng-enter, .listProd.ng-move, .listProd.ng-leave.ng-leave-active {
+  opacity: 0;
+  left: 300px; }
+
+.listProd.ng-enter.ng-enter-active, .listProd.ng-move.ng-move-active, .listProd.ng-leave {
+  opacity: 1;
+  left: 0; }
 
 /*# sourceMappingURL=style.css.map */
