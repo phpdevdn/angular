@@ -6,6 +6,7 @@
 	<title>Shop website</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<base href="/">	
 	<link rel="stylesheet" href="css/source.css">
 	<link rel="stylesheet" href="css/style.css">
 	<!--[if lt IE 9]>
@@ -15,6 +16,7 @@
 	<script>window.jQuery || document.write('<script src="js/jquery-1.11.3.min.js"><\/script>')</script>
 	<script src="js/angular/angular.min.js"></script>
 	<script src="js/angular/angular-animate.min.js"></script>
+	<script src="js/pagination.js"></script>
 	<script src="js/app.js"></script>
 </head>
 <body ng-App="mainApp">
@@ -37,7 +39,7 @@
 					<option value="time">date</option>
 				</select>
 				<span>&nbsp;order by : &nbsp;</span>
-				<select name="" id="" class="form-control" ng-model="asc_sel" ng-change="order_sort(asc_sel)" ng-init=" asc_sel= '0' ">
+				<select name="" id="" class="form-control" ng-model="asc_sel" ng-change="order_sort(asc_sel)" ng-init=" asc_sel= '1' ">
 					<option value="1" >Asc</option>
 					<option value="0" >Desc</option>
 				</select>
@@ -54,7 +56,7 @@
 		</nav>
 		<p>{{ s_search }}</p>
    		<ul class="list-prod">
-			<li ng-repeat="prod in prods | filter : s_search | orderBy: order_prod : asc as result" class="listProd">
+			<li ng-repeat="prod in prods | filter : s_search | orderBy: order_prod : asc |startFrom : pagination.page * pagination.perPage | limitTo : pagination.perPage as result" class="listProd">
 				<img ng-Src="{{prod.img}}" alt="">
 				<p class="tit-prod">{{ prod.title}}</p>
 				<p class="time-prod">{{prod.time | date:"dd-MM-yyyy"}}</p>
@@ -63,7 +65,14 @@
 				<h3>No Found</h3>
 			</li>
 		</ul>
-	</div>
+		<ul class="pagination">
+			<li ng-hide="pagination.page==0"><a href="{{ pagination.posPage(0) }}" ng-click="pagination.prevPage()">&laquo;</a></li>
+			<li ng-repeat="n_page in []|range : pagination.numPages" ng-class="{active : n_page== pagination.page}">
+				<a href="#page{{ n_page + 1 }}" ng-click="pagination.toPageId(n_page)">{{ n_page + 1 }}</a>
+			</li>
+			<li ng-hide="pagination.page == pagination.numPages - 1"><a href="{{ pagination.posPage(1) }}" ng-click="pagination.nextPage()">&raquo;</a></li>
+		</ul>
+ 	</div>
 	</main>
 	<footer id="footer">
 		<p>&copy;2015 by Shop website.</p>
