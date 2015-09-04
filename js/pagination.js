@@ -36,7 +36,7 @@
       paginator.toPageId = function(id) {
         if (id >= 0 && id <= paginator.numPages - 1) {
           paginator.page = id;
-        }
+          }
       };
       paginator.posPage=function(dir){
         var hash=$location.hash();
@@ -58,6 +58,7 @@
   paginationModule.filter('startFrom', function() {
     return function(input, start) {
       if (input === undefined) {
+        console.log('undefined');
         return input;
       } else {
         return input.slice(+start);
