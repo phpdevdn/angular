@@ -7,14 +7,33 @@ mainApp.filter('my_date',function() {
 	}
 	return convert_date;
 });
-mainApp.controller('product',['$scope','$http','$filter','Pagination','$modal',function($scope,$http,$filter,Pagination,$modal){
-	$http.get('data/product.json').success(function(data){		
+mainApp.service('prod_data',['$http','$filter',function($http,$filter){	
+		var output = "";
+		return function(callback){
+		$http.get('data/product.json').then(function(respon){
+             callback(respon);             
+ 		},function(respon){
+			  output=  respon.data || "request fail";
+		});
+		/*$http.get('data/product.json').success(function(data){		
 		angular.forEach(data,function( value, key ){
 			data[key].time=$filter('my_date')(data[key].time);
 		});
+		output=data;
+		});*/
+		}
+ 		
+}]);
+mainApp.controller('product',['$scope','prod_data','$filter','Pagination','$modal',function($scope,prod_data,$filter,Pagination,$modal){
+	
 		$scope.order_prod="id";
 		$scope.asc= false; 
-		$scope.prods = data ;
+		$scope.prods=[];
+		prod_data(function(respon){			
+			$scope.prods = respon.data;	
+			console.log($scope.prods);					
+		});
+		
 		$scope.s_name = '' ;
 		$scope.s_type = '';
 		$scope.animationsEnabled = false ;
@@ -31,7 +50,7 @@ mainApp.controller('product',['$scope','$http','$filter','Pagination','$modal',f
 		      }
 		    });
  		}
-    	$scope.pagination = Pagination.getNew(3);
+    	$scope.pagination = Pagination.getNew(8);
 		$scope.pagination.numPages = Math.ceil($scope.prods.length / $scope.pagination.perPage );
 		$scope.s_search = function (value, index,array){
 			var s_name= $scope.s_name;
@@ -61,7 +80,7 @@ mainApp.controller('product',['$scope','$http','$filter','Pagination','$modal',f
 		$scope.order_sort=function(data){
 			$scope.asc = (data==1)? false : true ;
 		}
-	});
+	 
  }]);
 mainApp.controller('modal_product',['$scope','$modalInstance','item', function($scope,$modalInstance,item){
   $scope.item = item;
