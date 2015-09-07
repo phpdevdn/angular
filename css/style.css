@@ -5,14 +5,13 @@ p {
   margin: 0;
   line-height: 100%; }
 
-a:hover {
+a:hover, a:focus {
   text-decoration: none; }
 
 #header {
   background: #eee;
   border-bottom: 1px solid #ddd;
-  text-align: center;
-  margin: 0 0 20px 0; }
+  text-align: center; }
 
 #main {
   min-height: 700px; }
@@ -24,14 +23,41 @@ a:hover {
   padding: 20px 0;
   clear: both; }
 
+.left-block {
+  width: 20%;
+  float: left; }
+
+ul.pro-list {
+  box-shadow: none;
+  border: none; }
+  ul.pro-list li {
+    border: none;
+    padding: 0;
+    margin: 3px 0; }
+
+.pro-butt {
+  display: block;
+  background: #eee;
+  border: #ddd;
+  padding: 10px;
+  cursor: pointer; }
+  .pro-butt:hover, .pro-butt.active {
+    background: #aaa; }
+
 .right-block {
   width: 80%;
   float: right; }
+  .right-block .cont-block {
+    border-left: 1px dashed #ddd; }
+
+.cont-block {
+  padding: 10px; }
 
 .list-prod {
   margin: 10px;
   display: block;
-  font-size: 0; }
+  font-size: 0;
+  padding: 0 0 0 0; }
   .list-prod li {
     display: inline-block;
     width: 25%;
@@ -50,17 +76,17 @@ a:hover {
       padding: 4px;
       margin: 0 5px; }
 
-.listProd {
-  position: relative;
-  transition: all 0.5s ease-out;
-  -webkit-transition: all 0.5s ease-out; }
-
-.listProd.ng-enter, .listProd.ng-move, .listProd.ng-leave.ng-leave-active {
-  opacity: 0;
-  left: 300px; }
-
-.listProd.ng-enter.ng-enter-active, .listProd.ng-move.ng-move-active, .listProd.ng-leave {
-  opacity: 1;
-  left: 0; }
+.modal-butt {
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background: rgba(255, 255, 255, 0.44) url("../images/common/resize.png") no-repeat;
+  background-size: 30px 30px;
+  cursor: pointer; }
+  .modal-butt:hover {
+    opacity: 0.7; }
 
 /*# sourceMappingURL=style.css.map */

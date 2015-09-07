@@ -6,7 +6,7 @@
 		"img" : "images/prod-01.jpg",
 		"time" : "08-29-2015",
 		"status" : 1 ,
-		"cate_id" : ""
+		"cate_id" : 1
 	},
 	{
 		"id" : 2 ,
@@ -15,7 +15,7 @@
 		"img" : "images/prod-02.jpg",
 		"time" : "07-29-2015",
 		"status" : 1 ,
-		"cate_id" : ""
+		"cate_id" : 2
 	},
 	{
 		"id" : 3 ,
@@ -24,7 +24,7 @@
 		"img" : "images/prod-03.jpg",
 		"time" : "06-29-2015",
 		"status" : 1 ,
-		"cate_id" : ""
+		"cate_id" : 3
 	},
 	{
 		"id" : 4 ,
@@ -33,7 +33,7 @@
 		"img" : "images/prod-04.jpg",
 		"time" : "08-09-2015",
 		"status" : 1 ,
-		"cate_id" : ""
+		"cate_id" : 3
 	},
 	{
 		"id" : 5 ,
@@ -42,7 +42,7 @@
 		"img" : "images/prod-05.jpg",
 		"time" : "08-29-2014",
 		"status" : 1 ,
-		"cate_id" : ""
+		"cate_id" : 2
 	},
 	{
 		"id" : 6 ,
@@ -51,7 +51,7 @@
 		"img" : "images/prod-06.jpg",
 		"time" : "05-10-2015",
 		"status" : 1 ,
-		"cate_id" : ""
+		"cate_id" : 1
 	},
 	{
 		"id" : 7 ,
@@ -60,7 +60,7 @@
 		"img" : "images/prod-07.jpg",
 		"time" : "01-15-2014",
 		"status" : 1 ,
-		"cate_id" : ""
+		"cate_id" : 1
 	},
 	{
 		"id" : 8 ,
@@ -69,7 +69,7 @@
 		"img" : "images/prod-08.jpg",
 		"time" : "04-01-2015",
 		"status" : 1 ,
-		"cate_id" : ""
+		"cate_id" : 3
 	},
 	{
 		"id" : 9 ,
@@ -78,7 +78,7 @@
 		"img" : "images/prod-09.jpg",
 		"time" : "12-15-2014",
 		"status" : 1 ,
-		"cate_id" : ""
+		"cate_id" : 2
 	},
 	{
 		"id" : 10 ,
@@ -87,7 +87,7 @@
 		"img" : "images/prod-10.jpg",
 		"time" : "01-15-2014",
 		"status" : 1 ,
-		"cate_id" : ""
+		"cate_id" : 2
 	},
 	{
 		"id" : 11 ,
@@ -96,7 +96,7 @@
 		"img" : "images/prod-11.jpg",
 		"time" : "05-23-2014",
 		"status" : 1 ,
-		"cate_id" : ""
+		"cate_id" : 3
 	},
 	{
 		"id" : 12 ,
@@ -105,7 +105,43 @@
 		"img" : "images/prod-12.jpg",
 		"time" : "03-15-2015",
 		"status" : 1 ,
-		"cate_id" : ""
+		"cate_id" : 1
+	},
+	{
+		"id" : 13 ,
+		"title" : "product 13",
+		"description" : "text text text text text text text text text text text text text text text text text text text text text text text ",
+		"img" : "images/prod-13.jpg",
+		"time" : "03-15-2013",
+		"status" : 1 ,
+		"cate_id" : 1
+	},
+	{
+		"id" : 14 ,
+		"title" : "product 14",
+		"description" : "text text text text text text text text text text text text text text text text text text text text text text text ",
+		"img" : "images/prod-14.jpg",
+		"time" : "03-23-2015",
+		"status" : 1 ,
+		"cate_id" : 3
+	},
+	{
+		"id" : 15 ,
+		"title" : "product 15",
+		"description" : "text text text text text text text text text text text text text text text text text text text text text text text ",
+		"img" : "images/prod-15.jpg",
+		"time" : "08-28-2015",
+		"status" : 1 ,
+		"cate_id" : 2
+	},
+	{
+		"id" : 16 ,
+		"title" : "product 16",
+		"description" : "text text text text text text text text text text text text text text text text text text text text text text text ",
+		"img" : "images/prod-16.jpg",
+		"time" : "04-30-2015",
+		"status" : 1 ,
+		"cate_id" : 2
 	}
 
 ]

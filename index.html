@@ -29,6 +29,19 @@
 		</div>
 	</header><!-- /header -->
 	<main id="main">
+		<section class="left-block" ng-controller="type_contrl">
+			<div class="cont-block">
+				<h3 class="title-1">Type product</h3>
+				<ul class="pro-list list-group">
+					<li class="list-goup-item">
+						<a ng-href="/" class="pro-butt" ng-class="{active: cate_type == null}" ng-click="butt_clk(null)">All</a>
+					</li>
+					<li class="list-group-item" ng-repeat="cate in cates | orderBy : title : asc ">
+						<a ng-href="/category/{{cate.id}}" class="pro-butt" ng-class="{active: cate_type == cate.id}" ng-click=" butt_clk(cate.id) ">{{cate.title}}</a>
+					</li>
+				</ul>
+			</div>
+		</section>
 		<div ng-view ></div>    
 	</main>
 	<footer id="footer">

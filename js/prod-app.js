@@ -22,17 +22,26 @@ mainApp.service('prod_data',['$http','$filter',function($http,$filter){
 		}
  		
 }]);
-mainApp.controller('product',['$scope','prod_data','$filter','Pagination','$modal',function($scope,prod_data,$filter,Pagination,$modal){
+mainApp.controller('product',['$scope','prod_data','$filter','Pagination','$modal','$routeParams',function($scope,prod_data,$filter,Pagination,$modal,$routeParams){
 	
 		$scope.order_prod="id";
 		$scope.asc= false; 
 		$scope.prods=[];
-		prod_data(function(respon){			
-			$scope.prods = respon.data;
-			angular.forEach($scope.prods,function(value,key){
-				$scope.prods[key].time=$filter('my_date')(value.time);
+		$scope.cate_type=($routeParams.cate_id=== undefined) ? null : $routeParams.cate_id;
+ 		prod_data(function(respon){			
+ 			angular.forEach(respon.data,function(value,key){
+				if($scope.cate_type !== null){
+					if(value.cate_id==$scope.cate_type){
+						value.time=$filter('my_date')(value.time);
+						$scope.prods.push(value);
+					}
+				}else{
+						value.time=$filter('my_date')(value.time);
+						$scope.prods.push(value);
+				}
+				
 			});	
-			$scope.pagination = Pagination.getNew(8);
+ 			$scope.pagination = Pagination.getNew(8);
 			$scope.pagination.numPages = Math.ceil($scope.prods.length / $scope.pagination.perPage );								
 		});
  		$scope.s_name = '' ;
