@@ -10,17 +10,15 @@ mainApp.filter('my_date',function() {
 mainApp.service('prod_data',['$http','$filter',function($http,$filter){	
 		var output = "";
 		return function(callback){
-		$http.get('data/product.json').then(function(respon){
+		$http({
+			method : 'GET',
+			url : 'data/product.json',
+
+		}).then(function(respon){
              callback(respon);             
  		},function(respon){
 			  output=  respon.data || "request fail";
-		});
-		/*$http.get('data/product.json').success(function(data){		
-		angular.forEach(data,function( value, key ){
-			data[key].time=$filter('my_date')(data[key].time);
-		});
-		output=data;
-		});*/
+		});  
 		}
  		
 }]);
@@ -30,11 +28,14 @@ mainApp.controller('product',['$scope','prod_data','$filter','Pagination','$moda
 		$scope.asc= false; 
 		$scope.prods=[];
 		prod_data(function(respon){			
-			$scope.prods = respon.data;	
-			console.log($scope.prods);					
+			$scope.prods = respon.data;
+			angular.forEach($scope.prods,function(value,key){
+				$scope.prods[key].time=$filter('my_date')(value.time);
+			});	
+			$scope.pagination = Pagination.getNew(8);
+			$scope.pagination.numPages = Math.ceil($scope.prods.length / $scope.pagination.perPage );								
 		});
-		
-		$scope.s_name = '' ;
+ 		$scope.s_name = '' ;
 		$scope.s_type = '';
 		$scope.animationsEnabled = false ;
 		$scope.open = function (size,items) {
@@ -50,8 +51,6 @@ mainApp.controller('product',['$scope','prod_data','$filter','Pagination','$moda
 		      }
 		    });
  		}
-    	$scope.pagination = Pagination.getNew(8);
-		$scope.pagination.numPages = Math.ceil($scope.prods.length / $scope.pagination.perPage );
 		$scope.s_search = function (value, index,array){
 			var s_name= $scope.s_name;
 			var s_type=$scope.s_type;
@@ -88,7 +87,19 @@ mainApp.controller('modal_product',['$scope','$modalInstance','item', function($
     $modalInstance.close();
   };
 }]);
-mainApp.controller('product_detail',['$scope','$routeParams',function($scope,$routeParams){
+mainApp.controller('product_detail',['$scope','$routeParams','prod_data',function($scope,$routeParams,prod_data){
 	$scope.id_product=$routeParams.id;
+	$scope.prod_detail=null ;
+	prod_data(function(respon){
+		var p_leng = respon.data.length;
+ 		var i = 0;
+		while( i < p_leng){
+			if(respon.data[i].id == $scope.id_product){
+				$scope.prod_detail=respon.data[i]
+				i=p_leng;
+			}
+			i++;
+		}
+	});
 }]);
 
