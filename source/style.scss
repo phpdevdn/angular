@@ -101,3 +101,17 @@ ul.pro-list{
     opacity:0.7;
   }
 }
+// animate event
+.listProd{
+  position:relative;
+   transition : all 0.5s ease-out;
+  -webkit-transition : all 0.5s ease-out;
+}
+.listProd.ng-enter,.listProd.ng-move,.listProd.ng-leave.ng-leave-active {
+  opacity:0;
+  left: 300px
+}
+.listProd.ng-enter.ng-enter-active,.listProd.ng-move.ng-move-active,.listProd.ng-leave {
+  opacity:1;
+  left : 0
+}

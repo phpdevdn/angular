@@ -46,7 +46,8 @@ ul.pro-list {
 
 .right-block {
   width: 80%;
-  float: right; }
+  float: right;
+  overflow: hidden; }
   .right-block .cont-block {
     border-left: 1px dashed #ddd; }
 
@@ -88,5 +89,46 @@ ul.pro-list {
   cursor: pointer; }
   .modal-butt:hover {
     opacity: 0.7; }
+
+.prod-content:after {
+  display: block;
+  content: '';
+  clear: both; }
+
+.prod-content {
+  margin: 10px 0; }
+
+.listProd.ng-enter {
+  position: relative;
+  left: 0;
+  top: 0;
+  transition: all 1s ease-out;
+  -webkit-transition: all 1s ease-out; }
+
+.listProd.ng-enter, .listProd.ng-move {
+  left: 300px; }
+
+.listProd.ng-enter.ng-enter-active, .listProd.ng-move.ng-move-active {
+  left: 0; }
+
+.ani-temp {
+  position: relative; }
+
+.ani-temp.ng-leave {
+  transition: all 1s ease-out;
+  -webkit-transition: all 1s ease-out;
+  top: 0;
+  left: 0;
+  opacity: 1; }
+
+.ani-temp.ng-leave.ng-leave-active {
+  left: -100%;
+  opacity: 0; }
+
+.ani-temp.ng-enter, .ani-temp.ng-move {
+  display: none; }
+
+.ani-temp.ng-enter-active, .ani-temp.ng-move-active {
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */

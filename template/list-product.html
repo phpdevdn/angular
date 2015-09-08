@@ -1,4 +1,3 @@
-	<div class="right-block" >
 		<div class="cont-block">
 			<nav class="navbar">
 				<div class="container-fluid">
@@ -27,8 +26,7 @@
 				</div>
 				</div>
 			</nav>
-			<p>{{ s_search }}</p>
-	   		<ul class="list-prod">
+ 	   		<ul class="list-prod">
 				<li ng-repeat="prod in prods | filter : s_search | orderBy: order_prod : asc | limitTo : pagination.perPage : pagination.page * pagination.perPage as result" class="listProd">
 					<span class="modal-butt" ng-click="open('lg',prod)"></span>
 					<img ng-Src="{{prod.img}}" alt="">
@@ -66,4 +64,4 @@
 		         </div>
 		    </script>
     	</div>
-    </div>
+ 
