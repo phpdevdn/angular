@@ -22,17 +22,18 @@
 	<script src="js/prod-app.js"></script>
 	<script src="js/app.js"></script>
 </head>
-<body ng-App="homeApp">
+<body>
 	<header id="header">
 		<div class="container-fluid">
 			<h1> <a href="localhost:3000" title="home page">Shop website</a></h1>
 			<p><a href="home.html">Home</a></p>
 		</div>
 	</header><!-- /header -->
-	<main id="main">
+	<main id="main" ng-App="homeApp">
 		<section class="left-block" ng-controller="type_contrl">
 			<div class="cont-block">
 				<h3 class="title-1">Type product</h3>
+				<p>{{test01}}</p>
 				<ul class="pro-list list-group">
 					<li class="list-goup-item">
 						<a ng-href="/" class="pro-butt" ng-class="{active: cate_type == null}" ng-click="butt_clk(null)">All</a>

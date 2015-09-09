@@ -3,10 +3,49 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>home</title>
-	<link rel="stylesheet" href="">
-</head>
+	<title>homePage</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<base href="/">	
+	<link rel="stylesheet" href="css/source.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!--[if lt IE 9]>
+	<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+	<![endif]-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-1.11.3.min.js"><\/script>')</script>
+	<script src="js/angular/angular.min.js"></script>
+	<script src="js/angular/angular-animate.min.js"></script>
+	<script src="js/angular/angular-route.min.js"></script>
+	<script src="js/bootstrap/ui-bootstrap-custom-tpls-0.13.3.min.js"></script>
+	<script src="js/home.js"></script>
+  </head>
 <body>
-	<h1>Display content in home page</h1>
+	<header id="header">
+		<div class="container-fluid">
+			<h1>Home</h1>
+			<p><a href="/">Shop page</a></p>
+		</div>
+	</header><!-- /header -->
+	<main ng-App="homeMod">
+		<div class="container-fluid" ng-controller="first_ctrl">
+ 			<div class="block">
+				<h3 class="page-header">Service </h3>
+				<p>{{data01}}</p>
+			</div>
+			<div class="block">
+				<h3 class="page-header">Constant value create by factory</h3>
+				<p>{{data02}}</p>
+			</div>
+			<div class="block">
+				<h3 class="page-header">Factory</h3>
+				<p>{{data03}}</p>
+			</div>
+			<div class="block">
+				<h3 class="page-header">Provider</h3>
+				<p>{{data04}}</p>
+			</div>
+		</div>
+	</main>
 </body>
 </html>

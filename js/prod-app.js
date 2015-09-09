@@ -2,7 +2,7 @@ var mainApp = angular.module('mainApp',['ngAnimate','simplePagination','ui.boots
 ;
 mainApp.filter('my_date',function() {
 	function convert_date(data){
-		 var $date = new Date(data);
+		var $date = new Date(data);
 		return $date.getTime();
 	}
 	return convert_date;
@@ -13,7 +13,6 @@ mainApp.service('prod_data',['$http','$filter',function($http,$filter){
 		$http({
 			method : 'GET',
 			url : 'data/product.json',
-
 		}).then(function(respon){
              callback(respon);             
  		},function(respon){

@@ -13,7 +13,6 @@ home_app.config(['$routeProvider',function($routeProvider){
         	templateUrl: 'template/product.html',
         	controller: 'product_detail'
       		});
-
 }]);
 home_app.service('prod_type',['$http','$filter',function($http,$filter){
 	return function(type_callback){
